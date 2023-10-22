@@ -1641,6 +1641,1032 @@ public final class RulexTrailer {
 
   }
 
+  public interface StreamRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:trailer.StreamRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes data = 1;</code>
+     * @return The data.
+     */
+    com.google.protobuf.ByteString getData();
+  }
+  /**
+   * Protobuf type {@code trailer.StreamRequest}
+   */
+  public static final class StreamRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:trailer.StreamRequest)
+      StreamRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StreamRequest.newBuilder() to construct.
+    private StreamRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StreamRequest() {
+      data_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StreamRequest();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return trailer.RulexTrailer.internal_static_trailer_StreamRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return trailer.RulexTrailer.internal_static_trailer_StreamRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              trailer.RulexTrailer.StreamRequest.class, trailer.RulexTrailer.StreamRequest.Builder.class);
+    }
+
+    public static final int DATA_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <code>bytes data = 1;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getData() {
+      return data_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!data_.isEmpty()) {
+        output.writeBytes(1, data_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!data_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, data_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof trailer.RulexTrailer.StreamRequest)) {
+        return super.equals(obj);
+      }
+      trailer.RulexTrailer.StreamRequest other = (trailer.RulexTrailer.StreamRequest) obj;
+
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static trailer.RulexTrailer.StreamRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trailer.RulexTrailer.StreamRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trailer.RulexTrailer.StreamRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trailer.RulexTrailer.StreamRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trailer.RulexTrailer.StreamRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trailer.RulexTrailer.StreamRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trailer.RulexTrailer.StreamRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static trailer.RulexTrailer.StreamRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static trailer.RulexTrailer.StreamRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static trailer.RulexTrailer.StreamRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static trailer.RulexTrailer.StreamRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static trailer.RulexTrailer.StreamRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(trailer.RulexTrailer.StreamRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code trailer.StreamRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:trailer.StreamRequest)
+        trailer.RulexTrailer.StreamRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return trailer.RulexTrailer.internal_static_trailer_StreamRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return trailer.RulexTrailer.internal_static_trailer_StreamRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                trailer.RulexTrailer.StreamRequest.class, trailer.RulexTrailer.StreamRequest.Builder.class);
+      }
+
+      // Construct using trailer.RulexTrailer.StreamRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        data_ = com.google.protobuf.ByteString.EMPTY;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return trailer.RulexTrailer.internal_static_trailer_StreamRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public trailer.RulexTrailer.StreamRequest getDefaultInstanceForType() {
+        return trailer.RulexTrailer.StreamRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public trailer.RulexTrailer.StreamRequest build() {
+        trailer.RulexTrailer.StreamRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public trailer.RulexTrailer.StreamRequest buildPartial() {
+        trailer.RulexTrailer.StreamRequest result = new trailer.RulexTrailer.StreamRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(trailer.RulexTrailer.StreamRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.data_ = data_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof trailer.RulexTrailer.StreamRequest) {
+          return mergeFrom((trailer.RulexTrailer.StreamRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(trailer.RulexTrailer.StreamRequest other) {
+        if (other == trailer.RulexTrailer.StreamRequest.getDefaultInstance()) return this;
+        if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
+          setData(other.getData());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                data_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes data = 1;</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getData() {
+        return data_;
+      }
+      /**
+       * <code>bytes data = 1;</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
+       */
+      public Builder setData(com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        data_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes data = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearData() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        data_ = getDefaultInstance().getData();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:trailer.StreamRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:trailer.StreamRequest)
+    private static final trailer.RulexTrailer.StreamRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new trailer.RulexTrailer.StreamRequest();
+    }
+
+    public static trailer.RulexTrailer.StreamRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StreamRequest>
+        PARSER = new com.google.protobuf.AbstractParser<StreamRequest>() {
+      @java.lang.Override
+      public StreamRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<StreamRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StreamRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public trailer.RulexTrailer.StreamRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface StreamResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:trailer.StreamResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 code = 1;</code>
+     * @return The code.
+     */
+    int getCode();
+
+    /**
+     * <code>bytes data = 2;</code>
+     * @return The data.
+     */
+    com.google.protobuf.ByteString getData();
+  }
+  /**
+   * Protobuf type {@code trailer.StreamResponse}
+   */
+  public static final class StreamResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:trailer.StreamResponse)
+      StreamResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StreamResponse.newBuilder() to construct.
+    private StreamResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StreamResponse() {
+      data_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StreamResponse();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return trailer.RulexTrailer.internal_static_trailer_StreamResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return trailer.RulexTrailer.internal_static_trailer_StreamResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              trailer.RulexTrailer.StreamResponse.class, trailer.RulexTrailer.StreamResponse.Builder.class);
+    }
+
+    public static final int CODE_FIELD_NUMBER = 1;
+    private int code_ = 0;
+    /**
+     * <code>int32 code = 1;</code>
+     * @return The code.
+     */
+    @java.lang.Override
+    public int getCode() {
+      return code_;
+    }
+
+    public static final int DATA_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <code>bytes data = 2;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getData() {
+      return data_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (code_ != 0) {
+        output.writeInt32(1, code_);
+      }
+      if (!data_.isEmpty()) {
+        output.writeBytes(2, data_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (code_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, code_);
+      }
+      if (!data_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, data_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof trailer.RulexTrailer.StreamResponse)) {
+        return super.equals(obj);
+      }
+      trailer.RulexTrailer.StreamResponse other = (trailer.RulexTrailer.StreamResponse) obj;
+
+      if (getCode()
+          != other.getCode()) return false;
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCode();
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static trailer.RulexTrailer.StreamResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trailer.RulexTrailer.StreamResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trailer.RulexTrailer.StreamResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trailer.RulexTrailer.StreamResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trailer.RulexTrailer.StreamResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static trailer.RulexTrailer.StreamResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static trailer.RulexTrailer.StreamResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static trailer.RulexTrailer.StreamResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static trailer.RulexTrailer.StreamResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static trailer.RulexTrailer.StreamResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static trailer.RulexTrailer.StreamResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static trailer.RulexTrailer.StreamResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(trailer.RulexTrailer.StreamResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code trailer.StreamResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:trailer.StreamResponse)
+        trailer.RulexTrailer.StreamResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return trailer.RulexTrailer.internal_static_trailer_StreamResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return trailer.RulexTrailer.internal_static_trailer_StreamResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                trailer.RulexTrailer.StreamResponse.class, trailer.RulexTrailer.StreamResponse.Builder.class);
+      }
+
+      // Construct using trailer.RulexTrailer.StreamResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        code_ = 0;
+        data_ = com.google.protobuf.ByteString.EMPTY;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return trailer.RulexTrailer.internal_static_trailer_StreamResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public trailer.RulexTrailer.StreamResponse getDefaultInstanceForType() {
+        return trailer.RulexTrailer.StreamResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public trailer.RulexTrailer.StreamResponse build() {
+        trailer.RulexTrailer.StreamResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public trailer.RulexTrailer.StreamResponse buildPartial() {
+        trailer.RulexTrailer.StreamResponse result = new trailer.RulexTrailer.StreamResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(trailer.RulexTrailer.StreamResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.code_ = code_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.data_ = data_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof trailer.RulexTrailer.StreamResponse) {
+          return mergeFrom((trailer.RulexTrailer.StreamResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(trailer.RulexTrailer.StreamResponse other) {
+        if (other == trailer.RulexTrailer.StreamResponse.getDefaultInstance()) return this;
+        if (other.getCode() != 0) {
+          setCode(other.getCode());
+        }
+        if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
+          setData(other.getData());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                code_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                data_ = input.readBytes();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int code_ ;
+      /**
+       * <code>int32 code = 1;</code>
+       * @return The code.
+       */
+      @java.lang.Override
+      public int getCode() {
+        return code_;
+      }
+      /**
+       * <code>int32 code = 1;</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(int value) {
+
+        code_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 code = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        code_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes data = 2;</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getData() {
+        return data_;
+      }
+      /**
+       * <code>bytes data = 2;</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
+       */
+      public Builder setData(com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        data_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes data = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearData() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        data_ = getDefaultInstance().getData();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:trailer.StreamResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:trailer.StreamResponse)
+    private static final trailer.RulexTrailer.StreamResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new trailer.RulexTrailer.StreamResponse();
+    }
+
+    public static trailer.RulexTrailer.StreamResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StreamResponse>
+        PARSER = new com.google.protobuf.AbstractParser<StreamResponse>() {
+      @java.lang.Override
+      public StreamResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<StreamResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StreamResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public trailer.RulexTrailer.StreamResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ServiceRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:trailer.ServiceRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -8953,6 +9979,16 @@ public final class RulexTrailer {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_trailer_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_trailer_StreamRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_trailer_StreamRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_trailer_StreamResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_trailer_StreamResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_trailer_ServiceRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -9013,35 +10049,38 @@ public final class RulexTrailer {
     java.lang.String[] descriptorData = {
       "\n\rtrailer.proto\022\007trailer\"\024\n\006Config\022\n\n\002kv" +
       "\030\001 \001(\014\"\t\n\007Request\")\n\010Response\022\014\n\004code\030\001 " +
-      "\001(\005\022\017\n\007message\030\002 \001(\t\"+\n\016ServiceRequest\022\013" +
-      "\n\003cmd\030\001 \001(\014\022\014\n\004args\030\002 \001(\014\"-\n\017ServiceResp" +
-      "onse\022\014\n\004code\030\001 \001(\005\022\014\n\004data\030\002 \001(\014\"\177\n\016Stat" +
-      "usResponse\022.\n\006status\030\001 \001(\0162\036.trailer.Sta" +
-      "tusResponse.Status\022\017\n\007message\030\002 \001(\t\",\n\006S" +
-      "tatus\022\013\n\007RUNNING\020\000\022\t\n\005ERROR\020\001\022\n\n\006STOPED\020" +
-      "\002\"\017\n\rSchemaRequest\"/\n\007DataRow\022$\n\006column\030" +
-      "\001 \003(\0132\024.trailer.ColumnValue\"M\n\006Column\022\014\n" +
-      "\004name\030\001 \001(\t\022 \n\004type\030\002 \001(\0162\022.trailer.Valu" +
-      "eType\022\023\n\013description\030\003 \001(\t\"X\n\013ColumnValu" +
-      "e\022\014\n\004name\030\001 \001(\t\022 \n\004type\030\002 \001(\0162\022.trailer." +
-      "ValueType\022\n\n\002id\030\003 \001(\t\022\r\n\005value\030\004 \001(\014\"Q\n\016" +
-      "SchemaResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030" +
-      "\002 \001(\t\022 \n\007columns\030\003 \003(\0132\017.trailer.Column\"" +
-      " \n\017DataRowsRequest\022\r\n\005query\030\001 \001(\014\"1\n\020Dat" +
-      "aRowsResponse\022\035\n\003row\030\001 \003(\0132\020.trailer.Dat" +
-      "aRow*-\n\tValueType\022\n\n\006STRING\020\000\022\n\n\006NUMBER\020" +
-      "\001\022\010\n\004BOOL\020\0022\212\003\n\007Trailer\022,\n\004Init\022\017.traile" +
-      "r.Config\032\021.trailer.Response\"\000\022.\n\005Start\022\020" +
-      ".trailer.Request\032\021.trailer.Response\"\000\0225\n" +
-      "\006Status\022\020.trailer.Request\032\027.trailer.Stat" +
-      "usResponse\"\000\022>\n\007Service\022\027.trailer.Servic" +
-      "eRequest\032\030.trailer.ServiceResponse\"\000\022>\n\005" +
-      "Query\022\030.trailer.DataRowsRequest\032\031.traile" +
-      "r.DataRowsResponse\"\000\022;\n\006Schema\022\026.trailer" +
-      ".SchemaRequest\032\027.trailer.SchemaResponse\"" +
-      "\000\022-\n\004Stop\022\020.trailer.Request\032\021.trailer.Re" +
-      "sponse\"\000B%\n\007trailerB\014RulexTrailerP\000Z\n./;" +
-      "trailerb\006proto3"
+      "\001(\005\022\017\n\007message\030\002 \001(\t\"\035\n\rStreamRequest\022\014\n" +
+      "\004data\030\001 \001(\014\",\n\016StreamResponse\022\014\n\004code\030\001 " +
+      "\001(\005\022\014\n\004data\030\002 \001(\014\"+\n\016ServiceRequest\022\013\n\003c" +
+      "md\030\001 \001(\014\022\014\n\004args\030\002 \001(\014\"-\n\017ServiceRespons" +
+      "e\022\014\n\004code\030\001 \001(\005\022\014\n\004data\030\002 \001(\014\"\177\n\016StatusR" +
+      "esponse\022.\n\006status\030\001 \001(\0162\036.trailer.Status" +
+      "Response.Status\022\017\n\007message\030\002 \001(\t\",\n\006Stat" +
+      "us\022\013\n\007RUNNING\020\000\022\t\n\005ERROR\020\001\022\n\n\006STOPED\020\002\"\017" +
+      "\n\rSchemaRequest\"/\n\007DataRow\022$\n\006column\030\001 \003" +
+      "(\0132\024.trailer.ColumnValue\"M\n\006Column\022\014\n\004na" +
+      "me\030\001 \001(\t\022 \n\004type\030\002 \001(\0162\022.trailer.ValueTy" +
+      "pe\022\023\n\013description\030\003 \001(\t\"X\n\013ColumnValue\022\014" +
+      "\n\004name\030\001 \001(\t\022 \n\004type\030\002 \001(\0162\022.trailer.Val" +
+      "ueType\022\n\n\002id\030\003 \001(\t\022\r\n\005value\030\004 \001(\014\"Q\n\016Sch" +
+      "emaResponse\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001" +
+      "(\t\022 \n\007columns\030\003 \003(\0132\017.trailer.Column\" \n\017" +
+      "DataRowsRequest\022\r\n\005query\030\001 \001(\014\"1\n\020DataRo" +
+      "wsResponse\022\035\n\003row\030\001 \003(\0132\020.trailer.DataRo" +
+      "w*-\n\tValueType\022\n\n\006STRING\020\000\022\n\n\006NUMBER\020\001\022\010" +
+      "\n\004BOOL\020\0022\313\003\n\007Trailer\022,\n\004Init\022\017.trailer.C" +
+      "onfig\032\021.trailer.Response\"\000\022.\n\005Start\022\020.tr" +
+      "ailer.Request\032\021.trailer.Response\"\000\0225\n\006St" +
+      "atus\022\020.trailer.Request\032\027.trailer.StatusR" +
+      "esponse\"\000\022>\n\007Service\022\027.trailer.ServiceRe" +
+      "quest\032\030.trailer.ServiceResponse\"\000\022?\n\010OnS" +
+      "tream\022\026.trailer.StreamRequest\032\027.trailer." +
+      "StreamResponse(\0010\001\022>\n\005Query\022\030.trailer.Da" +
+      "taRowsRequest\032\031.trailer.DataRowsResponse" +
+      "\"\000\022;\n\006Schema\022\026.trailer.SchemaRequest\032\027.t" +
+      "railer.SchemaResponse\"\000\022-\n\004Stop\022\020.traile" +
+      "r.Request\032\021.trailer.Response\"\000B%\n\007traile" +
+      "rB\014RulexTrailerP\000Z\n./;trailerb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9065,62 +10104,74 @@ public final class RulexTrailer {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trailer_Response_descriptor,
         new java.lang.String[] { "Code", "Message", });
-    internal_static_trailer_ServiceRequest_descriptor =
+    internal_static_trailer_StreamRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_trailer_StreamRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_trailer_StreamRequest_descriptor,
+        new java.lang.String[] { "Data", });
+    internal_static_trailer_StreamResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_trailer_StreamResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_trailer_StreamResponse_descriptor,
+        new java.lang.String[] { "Code", "Data", });
+    internal_static_trailer_ServiceRequest_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_trailer_ServiceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trailer_ServiceRequest_descriptor,
         new java.lang.String[] { "Cmd", "Args", });
     internal_static_trailer_ServiceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_trailer_ServiceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trailer_ServiceResponse_descriptor,
         new java.lang.String[] { "Code", "Data", });
     internal_static_trailer_StatusResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_trailer_StatusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trailer_StatusResponse_descriptor,
         new java.lang.String[] { "Status", "Message", });
     internal_static_trailer_SchemaRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_trailer_SchemaRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trailer_SchemaRequest_descriptor,
         new java.lang.String[] { });
     internal_static_trailer_DataRow_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_trailer_DataRow_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trailer_DataRow_descriptor,
         new java.lang.String[] { "Column", });
     internal_static_trailer_Column_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_trailer_Column_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trailer_Column_descriptor,
         new java.lang.String[] { "Name", "Type", "Description", });
     internal_static_trailer_ColumnValue_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_trailer_ColumnValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trailer_ColumnValue_descriptor,
         new java.lang.String[] { "Name", "Type", "Id", "Value", });
     internal_static_trailer_SchemaResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_trailer_SchemaResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trailer_SchemaResponse_descriptor,
         new java.lang.String[] { "Code", "Message", "Columns", });
     internal_static_trailer_DataRowsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_trailer_DataRowsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trailer_DataRowsRequest_descriptor,
         new java.lang.String[] { "Query", });
     internal_static_trailer_DataRowsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_trailer_DataRowsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trailer_DataRowsResponse_descriptor,

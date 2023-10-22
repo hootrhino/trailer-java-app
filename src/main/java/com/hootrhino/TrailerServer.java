@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class TrailerServer {
@@ -124,6 +125,31 @@ public class TrailerServer {
             }
             responseObserver.onNext(builder.build());
             responseObserver.onCompleted();
+        }
+
+        @Override
+        public StreamObserver<RulexTrailer.StreamRequest> onStream(StreamObserver<RulexTrailer.StreamResponse> responseObserver) {
+            return new StreamObserver<RulexTrailer.StreamRequest>() {
+                @Override
+                public void onNext(RulexTrailer.StreamRequest streamRequest) {
+                    log.info("来自协议包的日志 onStream");
+                }
+
+                @Override
+                public void onError(Throwable throwable) {
+                    log.log(Level.ALL, throwable.getMessage());
+                }
+
+                @Override
+                public void onCompleted() {
+                    RulexTrailer.StreamResponse response = RulexTrailer.StreamResponse.newBuilder()
+                            .setCode(1)
+                            .setData(ByteString.copyFrom("OK", StandardCharsets.UTF_8))
+                            .build();
+                    responseObserver.onNext(response);
+                    responseObserver.onCompleted();
+                }
+            };
         }
 
         @Override

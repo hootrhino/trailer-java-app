@@ -1,249 +1,134 @@
 package trailer;
 
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.58.0)",
+    value = "by gRPC proto compiler (version 1.4.0)",
     comments = "Source: trailer.proto")
-@io.grpc.stub.annotations.GrpcGenerated
 public final class TrailerGrpc {
 
   private TrailerGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "trailer.Trailer";
+  public static final String SERVICE_NAME = "trailer.Trailer";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<trailer.RulexTrailer.Config,
-      trailer.RulexTrailer.Response> getInitMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Init",
-      requestType = trailer.RulexTrailer.Config.class,
-      responseType = trailer.RulexTrailer.Response.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<trailer.RulexTrailer.Config,
-      trailer.RulexTrailer.Response> getInitMethod() {
-    io.grpc.MethodDescriptor<trailer.RulexTrailer.Config, trailer.RulexTrailer.Response> getInitMethod;
-    if ((getInitMethod = TrailerGrpc.getInitMethod) == null) {
-      synchronized (TrailerGrpc.class) {
-        if ((getInitMethod = TrailerGrpc.getInitMethod) == null) {
-          TrailerGrpc.getInitMethod = getInitMethod =
-              io.grpc.MethodDescriptor.<trailer.RulexTrailer.Config, trailer.RulexTrailer.Response>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Init"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  trailer.RulexTrailer.Config.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  trailer.RulexTrailer.Response.getDefaultInstance()))
-              .setSchemaDescriptor(new TrailerMethodDescriptorSupplier("Init"))
-              .build();
-        }
-      }
-    }
-    return getInitMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<trailer.RulexTrailer.Request,
-      trailer.RulexTrailer.Response> getStartMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Start",
-      requestType = trailer.RulexTrailer.Request.class,
-      responseType = trailer.RulexTrailer.Response.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<trailer.RulexTrailer.Request,
-      trailer.RulexTrailer.Response> getStartMethod() {
-    io.grpc.MethodDescriptor<trailer.RulexTrailer.Request, trailer.RulexTrailer.Response> getStartMethod;
-    if ((getStartMethod = TrailerGrpc.getStartMethod) == null) {
-      synchronized (TrailerGrpc.class) {
-        if ((getStartMethod = TrailerGrpc.getStartMethod) == null) {
-          TrailerGrpc.getStartMethod = getStartMethod =
-              io.grpc.MethodDescriptor.<trailer.RulexTrailer.Request, trailer.RulexTrailer.Response>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Start"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  trailer.RulexTrailer.Request.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  trailer.RulexTrailer.Response.getDefaultInstance()))
-              .setSchemaDescriptor(new TrailerMethodDescriptorSupplier("Start"))
-              .build();
-        }
-      }
-    }
-    return getStartMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<trailer.RulexTrailer.Request,
-      trailer.RulexTrailer.StatusResponse> getStatusMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Status",
-      requestType = trailer.RulexTrailer.Request.class,
-      responseType = trailer.RulexTrailer.StatusResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<trailer.RulexTrailer.Request,
-      trailer.RulexTrailer.StatusResponse> getStatusMethod() {
-    io.grpc.MethodDescriptor<trailer.RulexTrailer.Request, trailer.RulexTrailer.StatusResponse> getStatusMethod;
-    if ((getStatusMethod = TrailerGrpc.getStatusMethod) == null) {
-      synchronized (TrailerGrpc.class) {
-        if ((getStatusMethod = TrailerGrpc.getStatusMethod) == null) {
-          TrailerGrpc.getStatusMethod = getStatusMethod =
-              io.grpc.MethodDescriptor.<trailer.RulexTrailer.Request, trailer.RulexTrailer.StatusResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Status"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  trailer.RulexTrailer.Request.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  trailer.RulexTrailer.StatusResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new TrailerMethodDescriptorSupplier("Status"))
-              .build();
-        }
-      }
-    }
-    return getStatusMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<trailer.RulexTrailer.ServiceRequest,
-      trailer.RulexTrailer.ServiceResponse> getServiceMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Service",
-      requestType = trailer.RulexTrailer.ServiceRequest.class,
-      responseType = trailer.RulexTrailer.ServiceResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<trailer.RulexTrailer.ServiceRequest,
-      trailer.RulexTrailer.ServiceResponse> getServiceMethod() {
-    io.grpc.MethodDescriptor<trailer.RulexTrailer.ServiceRequest, trailer.RulexTrailer.ServiceResponse> getServiceMethod;
-    if ((getServiceMethod = TrailerGrpc.getServiceMethod) == null) {
-      synchronized (TrailerGrpc.class) {
-        if ((getServiceMethod = TrailerGrpc.getServiceMethod) == null) {
-          TrailerGrpc.getServiceMethod = getServiceMethod =
-              io.grpc.MethodDescriptor.<trailer.RulexTrailer.ServiceRequest, trailer.RulexTrailer.ServiceResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Service"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  trailer.RulexTrailer.ServiceRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  trailer.RulexTrailer.ServiceResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new TrailerMethodDescriptorSupplier("Service"))
-              .build();
-        }
-      }
-    }
-    return getServiceMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<trailer.RulexTrailer.DataRowsRequest,
-      trailer.RulexTrailer.DataRowsResponse> getQueryMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Query",
-      requestType = trailer.RulexTrailer.DataRowsRequest.class,
-      responseType = trailer.RulexTrailer.DataRowsResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<trailer.RulexTrailer.DataRowsRequest,
-      trailer.RulexTrailer.DataRowsResponse> getQueryMethod() {
-    io.grpc.MethodDescriptor<trailer.RulexTrailer.DataRowsRequest, trailer.RulexTrailer.DataRowsResponse> getQueryMethod;
-    if ((getQueryMethod = TrailerGrpc.getQueryMethod) == null) {
-      synchronized (TrailerGrpc.class) {
-        if ((getQueryMethod = TrailerGrpc.getQueryMethod) == null) {
-          TrailerGrpc.getQueryMethod = getQueryMethod =
-              io.grpc.MethodDescriptor.<trailer.RulexTrailer.DataRowsRequest, trailer.RulexTrailer.DataRowsResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Query"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  trailer.RulexTrailer.DataRowsRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  trailer.RulexTrailer.DataRowsResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new TrailerMethodDescriptorSupplier("Query"))
-              .build();
-        }
-      }
-    }
-    return getQueryMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<trailer.RulexTrailer.SchemaRequest,
-      trailer.RulexTrailer.SchemaResponse> getSchemaMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Schema",
-      requestType = trailer.RulexTrailer.SchemaRequest.class,
-      responseType = trailer.RulexTrailer.SchemaResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<trailer.RulexTrailer.SchemaRequest,
-      trailer.RulexTrailer.SchemaResponse> getSchemaMethod() {
-    io.grpc.MethodDescriptor<trailer.RulexTrailer.SchemaRequest, trailer.RulexTrailer.SchemaResponse> getSchemaMethod;
-    if ((getSchemaMethod = TrailerGrpc.getSchemaMethod) == null) {
-      synchronized (TrailerGrpc.class) {
-        if ((getSchemaMethod = TrailerGrpc.getSchemaMethod) == null) {
-          TrailerGrpc.getSchemaMethod = getSchemaMethod =
-              io.grpc.MethodDescriptor.<trailer.RulexTrailer.SchemaRequest, trailer.RulexTrailer.SchemaResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Schema"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  trailer.RulexTrailer.SchemaRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  trailer.RulexTrailer.SchemaResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new TrailerMethodDescriptorSupplier("Schema"))
-              .build();
-        }
-      }
-    }
-    return getSchemaMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<trailer.RulexTrailer.Request,
-      trailer.RulexTrailer.Response> getStopMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Stop",
-      requestType = trailer.RulexTrailer.Request.class,
-      responseType = trailer.RulexTrailer.Response.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<trailer.RulexTrailer.Request,
-      trailer.RulexTrailer.Response> getStopMethod() {
-    io.grpc.MethodDescriptor<trailer.RulexTrailer.Request, trailer.RulexTrailer.Response> getStopMethod;
-    if ((getStopMethod = TrailerGrpc.getStopMethod) == null) {
-      synchronized (TrailerGrpc.class) {
-        if ((getStopMethod = TrailerGrpc.getStopMethod) == null) {
-          TrailerGrpc.getStopMethod = getStopMethod =
-              io.grpc.MethodDescriptor.<trailer.RulexTrailer.Request, trailer.RulexTrailer.Response>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Stop"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  trailer.RulexTrailer.Request.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  trailer.RulexTrailer.Response.getDefaultInstance()))
-              .setSchemaDescriptor(new TrailerMethodDescriptorSupplier("Stop"))
-              .build();
-        }
-      }
-    }
-    return getStopMethod;
-  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<trailer.RulexTrailer.Config,
+      trailer.RulexTrailer.Response> METHOD_INIT =
+      io.grpc.MethodDescriptor.<trailer.RulexTrailer.Config, trailer.RulexTrailer.Response>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(generateFullMethodName(
+              "trailer.Trailer", "Init"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.Config.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.Response.getDefaultInstance()))
+          .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<trailer.RulexTrailer.Request,
+      trailer.RulexTrailer.Response> METHOD_START =
+      io.grpc.MethodDescriptor.<trailer.RulexTrailer.Request, trailer.RulexTrailer.Response>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(generateFullMethodName(
+              "trailer.Trailer", "Start"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.Request.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.Response.getDefaultInstance()))
+          .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<trailer.RulexTrailer.Request,
+      trailer.RulexTrailer.StatusResponse> METHOD_STATUS =
+      io.grpc.MethodDescriptor.<trailer.RulexTrailer.Request, trailer.RulexTrailer.StatusResponse>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(generateFullMethodName(
+              "trailer.Trailer", "Status"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.Request.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.StatusResponse.getDefaultInstance()))
+          .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<trailer.RulexTrailer.ServiceRequest,
+      trailer.RulexTrailer.ServiceResponse> METHOD_SERVICE =
+      io.grpc.MethodDescriptor.<trailer.RulexTrailer.ServiceRequest, trailer.RulexTrailer.ServiceResponse>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(generateFullMethodName(
+              "trailer.Trailer", "Service"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.ServiceRequest.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.ServiceResponse.getDefaultInstance()))
+          .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<trailer.RulexTrailer.StreamRequest,
+      trailer.RulexTrailer.StreamResponse> METHOD_ON_STREAM =
+      io.grpc.MethodDescriptor.<trailer.RulexTrailer.StreamRequest, trailer.RulexTrailer.StreamResponse>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+          .setFullMethodName(generateFullMethodName(
+              "trailer.Trailer", "OnStream"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.StreamRequest.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.StreamResponse.getDefaultInstance()))
+          .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<trailer.RulexTrailer.DataRowsRequest,
+      trailer.RulexTrailer.DataRowsResponse> METHOD_QUERY =
+      io.grpc.MethodDescriptor.<trailer.RulexTrailer.DataRowsRequest, trailer.RulexTrailer.DataRowsResponse>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(generateFullMethodName(
+              "trailer.Trailer", "Query"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.DataRowsRequest.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.DataRowsResponse.getDefaultInstance()))
+          .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<trailer.RulexTrailer.SchemaRequest,
+      trailer.RulexTrailer.SchemaResponse> METHOD_SCHEMA =
+      io.grpc.MethodDescriptor.<trailer.RulexTrailer.SchemaRequest, trailer.RulexTrailer.SchemaResponse>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(generateFullMethodName(
+              "trailer.Trailer", "Schema"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.SchemaRequest.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.SchemaResponse.getDefaultInstance()))
+          .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<trailer.RulexTrailer.Request,
+      trailer.RulexTrailer.Response> METHOD_STOP =
+      io.grpc.MethodDescriptor.<trailer.RulexTrailer.Request, trailer.RulexTrailer.Response>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(generateFullMethodName(
+              "trailer.Trailer", "Stop"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.Request.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              trailer.RulexTrailer.Response.getDefaultInstance()))
+          .build();
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static TrailerStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<TrailerStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<TrailerStub>() {
-        @java.lang.Override
-        public TrailerStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new TrailerStub(channel, callOptions);
-        }
-      };
-    return TrailerStub.newStub(factory, channel);
+    return new TrailerStub(channel);
   }
 
   /**
@@ -251,14 +136,7 @@ public final class TrailerGrpc {
    */
   public static TrailerBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<TrailerBlockingStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<TrailerBlockingStub>() {
-        @java.lang.Override
-        public TrailerBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new TrailerBlockingStub(channel, callOptions);
-        }
-      };
-    return TrailerBlockingStub.newStub(factory, channel);
+    return new TrailerBlockingStub(channel);
   }
 
   /**
@@ -266,28 +144,21 @@ public final class TrailerGrpc {
    */
   public static TrailerFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<TrailerFutureStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<TrailerFutureStub>() {
-        @java.lang.Override
-        public TrailerFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new TrailerFutureStub(channel, callOptions);
-        }
-      };
-    return TrailerFutureStub.newStub(factory, channel);
+    return new TrailerFutureStub(channel);
   }
 
   /**
    */
-  public interface AsyncService {
+  public static abstract class TrailerImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
      * 初始化, 主要是为了传配置进去
      * </pre>
      */
-    default void init(trailer.RulexTrailer.Config request,
+    public void init(trailer.RulexTrailer.Config request,
         io.grpc.stub.StreamObserver<trailer.RulexTrailer.Response> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getInitMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(METHOD_INIT, responseObserver);
     }
 
     /**
@@ -295,9 +166,9 @@ public final class TrailerGrpc {
      * 启动
      * </pre>
      */
-    default void start(trailer.RulexTrailer.Request request,
+    public void start(trailer.RulexTrailer.Request request,
         io.grpc.stub.StreamObserver<trailer.RulexTrailer.Response> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStartMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(METHOD_START, responseObserver);
     }
 
     /**
@@ -305,9 +176,9 @@ public final class TrailerGrpc {
      * 获取状态
      * </pre>
      */
-    default void status(trailer.RulexTrailer.Request request,
+    public void status(trailer.RulexTrailer.Request request,
         io.grpc.stub.StreamObserver<trailer.RulexTrailer.StatusResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStatusMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(METHOD_STATUS, responseObserver);
     }
 
     /**
@@ -315,9 +186,19 @@ public final class TrailerGrpc {
      * 服务调用
      * </pre>
      */
-    default void service(trailer.RulexTrailer.ServiceRequest request,
+    public void service(trailer.RulexTrailer.ServiceRequest request,
         io.grpc.stub.StreamObserver<trailer.RulexTrailer.ServiceResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getServiceMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(METHOD_SERVICE, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 流数据
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<trailer.RulexTrailer.StreamRequest> onStream(
+        io.grpc.stub.StreamObserver<trailer.RulexTrailer.StreamResponse> responseObserver) {
+      return asyncUnimplementedStreamingCall(METHOD_ON_STREAM, responseObserver);
     }
 
     /**
@@ -325,9 +206,9 @@ public final class TrailerGrpc {
      * 数据查询
      * </pre>
      */
-    default void query(trailer.RulexTrailer.DataRowsRequest request,
+    public void query(trailer.RulexTrailer.DataRowsRequest request,
         io.grpc.stub.StreamObserver<trailer.RulexTrailer.DataRowsResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getQueryMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(METHOD_QUERY, responseObserver);
     }
 
     /**
@@ -335,9 +216,9 @@ public final class TrailerGrpc {
      * 数据模型
      * </pre>
      */
-    default void schema(trailer.RulexTrailer.SchemaRequest request,
+    public void schema(trailer.RulexTrailer.SchemaRequest request,
         io.grpc.stub.StreamObserver<trailer.RulexTrailer.SchemaResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSchemaMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(METHOD_SCHEMA, responseObserver);
     }
 
     /**
@@ -345,36 +226,88 @@ public final class TrailerGrpc {
      * 停止
      * </pre>
      */
-    default void stop(trailer.RulexTrailer.Request request,
+    public void stop(trailer.RulexTrailer.Request request,
         io.grpc.stub.StreamObserver<trailer.RulexTrailer.Response> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStopMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(METHOD_STOP, responseObserver);
     }
-  }
-
-  /**
-   * Base class for the server implementation of the service Trailer.
-   */
-  public static abstract class TrailerImplBase
-      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
-      return TrailerGrpc.bindService(this);
+      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            METHOD_INIT,
+            asyncUnaryCall(
+              new MethodHandlers<
+                trailer.RulexTrailer.Config,
+                trailer.RulexTrailer.Response>(
+                  this, METHODID_INIT)))
+          .addMethod(
+            METHOD_START,
+            asyncUnaryCall(
+              new MethodHandlers<
+                trailer.RulexTrailer.Request,
+                trailer.RulexTrailer.Response>(
+                  this, METHODID_START)))
+          .addMethod(
+            METHOD_STATUS,
+            asyncUnaryCall(
+              new MethodHandlers<
+                trailer.RulexTrailer.Request,
+                trailer.RulexTrailer.StatusResponse>(
+                  this, METHODID_STATUS)))
+          .addMethod(
+            METHOD_SERVICE,
+            asyncUnaryCall(
+              new MethodHandlers<
+                trailer.RulexTrailer.ServiceRequest,
+                trailer.RulexTrailer.ServiceResponse>(
+                  this, METHODID_SERVICE)))
+          .addMethod(
+            METHOD_ON_STREAM,
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                trailer.RulexTrailer.StreamRequest,
+                trailer.RulexTrailer.StreamResponse>(
+                  this, METHODID_ON_STREAM)))
+          .addMethod(
+            METHOD_QUERY,
+            asyncUnaryCall(
+              new MethodHandlers<
+                trailer.RulexTrailer.DataRowsRequest,
+                trailer.RulexTrailer.DataRowsResponse>(
+                  this, METHODID_QUERY)))
+          .addMethod(
+            METHOD_SCHEMA,
+            asyncUnaryCall(
+              new MethodHandlers<
+                trailer.RulexTrailer.SchemaRequest,
+                trailer.RulexTrailer.SchemaResponse>(
+                  this, METHODID_SCHEMA)))
+          .addMethod(
+            METHOD_STOP,
+            asyncUnaryCall(
+              new MethodHandlers<
+                trailer.RulexTrailer.Request,
+                trailer.RulexTrailer.Response>(
+                  this, METHODID_STOP)))
+          .build();
     }
   }
 
   /**
-   * A stub to allow clients to do asynchronous rpc calls to service Trailer.
    */
-  public static final class TrailerStub
-      extends io.grpc.stub.AbstractAsyncStub<TrailerStub> {
-    private TrailerStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class TrailerStub extends io.grpc.stub.AbstractStub<TrailerStub> {
+    private TrailerStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private TrailerStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected TrailerStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected TrailerStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new TrailerStub(channel, callOptions);
     }
 
@@ -385,8 +318,8 @@ public final class TrailerGrpc {
      */
     public void init(trailer.RulexTrailer.Config request,
         io.grpc.stub.StreamObserver<trailer.RulexTrailer.Response> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getInitMethod(), getCallOptions()), request, responseObserver);
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_INIT, getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -396,8 +329,8 @@ public final class TrailerGrpc {
      */
     public void start(trailer.RulexTrailer.Request request,
         io.grpc.stub.StreamObserver<trailer.RulexTrailer.Response> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getStartMethod(), getCallOptions()), request, responseObserver);
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_START, getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -407,8 +340,8 @@ public final class TrailerGrpc {
      */
     public void status(trailer.RulexTrailer.Request request,
         io.grpc.stub.StreamObserver<trailer.RulexTrailer.StatusResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getStatusMethod(), getCallOptions()), request, responseObserver);
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_STATUS, getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -418,8 +351,19 @@ public final class TrailerGrpc {
      */
     public void service(trailer.RulexTrailer.ServiceRequest request,
         io.grpc.stub.StreamObserver<trailer.RulexTrailer.ServiceResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getServiceMethod(), getCallOptions()), request, responseObserver);
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_SERVICE, getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * 流数据
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<trailer.RulexTrailer.StreamRequest> onStream(
+        io.grpc.stub.StreamObserver<trailer.RulexTrailer.StreamResponse> responseObserver) {
+      return asyncBidiStreamingCall(
+          getChannel().newCall(METHOD_ON_STREAM, getCallOptions()), responseObserver);
     }
 
     /**
@@ -429,8 +373,8 @@ public final class TrailerGrpc {
      */
     public void query(trailer.RulexTrailer.DataRowsRequest request,
         io.grpc.stub.StreamObserver<trailer.RulexTrailer.DataRowsResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getQueryMethod(), getCallOptions()), request, responseObserver);
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_QUERY, getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -440,8 +384,8 @@ public final class TrailerGrpc {
      */
     public void schema(trailer.RulexTrailer.SchemaRequest request,
         io.grpc.stub.StreamObserver<trailer.RulexTrailer.SchemaResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSchemaMethod(), getCallOptions()), request, responseObserver);
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_SCHEMA, getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -451,24 +395,26 @@ public final class TrailerGrpc {
      */
     public void stop(trailer.RulexTrailer.Request request,
         io.grpc.stub.StreamObserver<trailer.RulexTrailer.Response> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getStopMethod(), getCallOptions()), request, responseObserver);
+      asyncUnaryCall(
+          getChannel().newCall(METHOD_STOP, getCallOptions()), request, responseObserver);
     }
   }
 
   /**
-   * A stub to allow clients to do synchronous rpc calls to service Trailer.
    */
-  public static final class TrailerBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<TrailerBlockingStub> {
-    private TrailerBlockingStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class TrailerBlockingStub extends io.grpc.stub.AbstractStub<TrailerBlockingStub> {
+    private TrailerBlockingStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private TrailerBlockingStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected TrailerBlockingStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected TrailerBlockingStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new TrailerBlockingStub(channel, callOptions);
     }
 
@@ -478,8 +424,8 @@ public final class TrailerGrpc {
      * </pre>
      */
     public trailer.RulexTrailer.Response init(trailer.RulexTrailer.Config request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getInitMethod(), getCallOptions(), request);
+      return blockingUnaryCall(
+          getChannel(), METHOD_INIT, getCallOptions(), request);
     }
 
     /**
@@ -488,8 +434,8 @@ public final class TrailerGrpc {
      * </pre>
      */
     public trailer.RulexTrailer.Response start(trailer.RulexTrailer.Request request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getStartMethod(), getCallOptions(), request);
+      return blockingUnaryCall(
+          getChannel(), METHOD_START, getCallOptions(), request);
     }
 
     /**
@@ -498,8 +444,8 @@ public final class TrailerGrpc {
      * </pre>
      */
     public trailer.RulexTrailer.StatusResponse status(trailer.RulexTrailer.Request request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getStatusMethod(), getCallOptions(), request);
+      return blockingUnaryCall(
+          getChannel(), METHOD_STATUS, getCallOptions(), request);
     }
 
     /**
@@ -508,8 +454,8 @@ public final class TrailerGrpc {
      * </pre>
      */
     public trailer.RulexTrailer.ServiceResponse service(trailer.RulexTrailer.ServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getServiceMethod(), getCallOptions(), request);
+      return blockingUnaryCall(
+          getChannel(), METHOD_SERVICE, getCallOptions(), request);
     }
 
     /**
@@ -518,8 +464,8 @@ public final class TrailerGrpc {
      * </pre>
      */
     public trailer.RulexTrailer.DataRowsResponse query(trailer.RulexTrailer.DataRowsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getQueryMethod(), getCallOptions(), request);
+      return blockingUnaryCall(
+          getChannel(), METHOD_QUERY, getCallOptions(), request);
     }
 
     /**
@@ -528,8 +474,8 @@ public final class TrailerGrpc {
      * </pre>
      */
     public trailer.RulexTrailer.SchemaResponse schema(trailer.RulexTrailer.SchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSchemaMethod(), getCallOptions(), request);
+      return blockingUnaryCall(
+          getChannel(), METHOD_SCHEMA, getCallOptions(), request);
     }
 
     /**
@@ -538,24 +484,26 @@ public final class TrailerGrpc {
      * </pre>
      */
     public trailer.RulexTrailer.Response stop(trailer.RulexTrailer.Request request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getStopMethod(), getCallOptions(), request);
+      return blockingUnaryCall(
+          getChannel(), METHOD_STOP, getCallOptions(), request);
     }
   }
 
   /**
-   * A stub to allow clients to do ListenableFuture-style rpc calls to service Trailer.
    */
-  public static final class TrailerFutureStub
-      extends io.grpc.stub.AbstractFutureStub<TrailerFutureStub> {
-    private TrailerFutureStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class TrailerFutureStub extends io.grpc.stub.AbstractStub<TrailerFutureStub> {
+    private TrailerFutureStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private TrailerFutureStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected TrailerFutureStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected TrailerFutureStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new TrailerFutureStub(channel, callOptions);
     }
 
@@ -566,8 +514,8 @@ public final class TrailerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<trailer.RulexTrailer.Response> init(
         trailer.RulexTrailer.Config request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getInitMethod(), getCallOptions()), request);
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_INIT, getCallOptions()), request);
     }
 
     /**
@@ -577,8 +525,8 @@ public final class TrailerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<trailer.RulexTrailer.Response> start(
         trailer.RulexTrailer.Request request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getStartMethod(), getCallOptions()), request);
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_START, getCallOptions()), request);
     }
 
     /**
@@ -588,8 +536,8 @@ public final class TrailerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<trailer.RulexTrailer.StatusResponse> status(
         trailer.RulexTrailer.Request request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getStatusMethod(), getCallOptions()), request);
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_STATUS, getCallOptions()), request);
     }
 
     /**
@@ -599,8 +547,8 @@ public final class TrailerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<trailer.RulexTrailer.ServiceResponse> service(
         trailer.RulexTrailer.ServiceRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getServiceMethod(), getCallOptions()), request);
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_SERVICE, getCallOptions()), request);
     }
 
     /**
@@ -610,8 +558,8 @@ public final class TrailerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<trailer.RulexTrailer.DataRowsResponse> query(
         trailer.RulexTrailer.DataRowsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getQueryMethod(), getCallOptions()), request);
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_QUERY, getCallOptions()), request);
     }
 
     /**
@@ -621,8 +569,8 @@ public final class TrailerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<trailer.RulexTrailer.SchemaResponse> schema(
         trailer.RulexTrailer.SchemaRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSchemaMethod(), getCallOptions()), request);
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_SCHEMA, getCallOptions()), request);
     }
 
     /**
@@ -632,8 +580,8 @@ public final class TrailerGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<trailer.RulexTrailer.Response> stop(
         trailer.RulexTrailer.Request request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getStopMethod(), getCallOptions()), request);
+      return futureUnaryCall(
+          getChannel().newCall(METHOD_STOP, getCallOptions()), request);
     }
   }
 
@@ -644,16 +592,17 @@ public final class TrailerGrpc {
   private static final int METHODID_QUERY = 4;
   private static final int METHODID_SCHEMA = 5;
   private static final int METHODID_STOP = 6;
+  private static final int METHODID_ON_STREAM = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AsyncService serviceImpl;
+    private final TrailerImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AsyncService serviceImpl, int methodId) {
+    MethodHandlers(TrailerImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -700,98 +649,19 @@ public final class TrailerGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_ON_STREAM:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.onStream(
+              (io.grpc.stub.StreamObserver<trailer.RulexTrailer.StreamResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
     }
   }
 
-  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
-    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-        .addMethod(
-          getInitMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              trailer.RulexTrailer.Config,
-              trailer.RulexTrailer.Response>(
-                service, METHODID_INIT)))
-        .addMethod(
-          getStartMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              trailer.RulexTrailer.Request,
-              trailer.RulexTrailer.Response>(
-                service, METHODID_START)))
-        .addMethod(
-          getStatusMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              trailer.RulexTrailer.Request,
-              trailer.RulexTrailer.StatusResponse>(
-                service, METHODID_STATUS)))
-        .addMethod(
-          getServiceMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              trailer.RulexTrailer.ServiceRequest,
-              trailer.RulexTrailer.ServiceResponse>(
-                service, METHODID_SERVICE)))
-        .addMethod(
-          getQueryMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              trailer.RulexTrailer.DataRowsRequest,
-              trailer.RulexTrailer.DataRowsResponse>(
-                service, METHODID_QUERY)))
-        .addMethod(
-          getSchemaMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              trailer.RulexTrailer.SchemaRequest,
-              trailer.RulexTrailer.SchemaResponse>(
-                service, METHODID_SCHEMA)))
-        .addMethod(
-          getStopMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              trailer.RulexTrailer.Request,
-              trailer.RulexTrailer.Response>(
-                service, METHODID_STOP)))
-        .build();
-  }
-
-  private static abstract class TrailerBaseDescriptorSupplier
-      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    TrailerBaseDescriptorSupplier() {}
-
+  private static final class TrailerDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
       return trailer.RulexTrailer.getDescriptor();
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("Trailer");
-    }
-  }
-
-  private static final class TrailerFileDescriptorSupplier
-      extends TrailerBaseDescriptorSupplier {
-    TrailerFileDescriptorSupplier() {}
-  }
-
-  private static final class TrailerMethodDescriptorSupplier
-      extends TrailerBaseDescriptorSupplier
-      implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final java.lang.String methodName;
-
-    TrailerMethodDescriptorSupplier(java.lang.String methodName) {
-      this.methodName = methodName;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
-      return getServiceDescriptor().findMethodByName(methodName);
     }
   }
 
@@ -804,14 +674,15 @@ public final class TrailerGrpc {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new TrailerFileDescriptorSupplier())
-              .addMethod(getInitMethod())
-              .addMethod(getStartMethod())
-              .addMethod(getStatusMethod())
-              .addMethod(getServiceMethod())
-              .addMethod(getQueryMethod())
-              .addMethod(getSchemaMethod())
-              .addMethod(getStopMethod())
+              .setSchemaDescriptor(new TrailerDescriptorSupplier())
+              .addMethod(METHOD_INIT)
+              .addMethod(METHOD_START)
+              .addMethod(METHOD_STATUS)
+              .addMethod(METHOD_SERVICE)
+              .addMethod(METHOD_ON_STREAM)
+              .addMethod(METHOD_QUERY)
+              .addMethod(METHOD_SCHEMA)
+              .addMethod(METHOD_STOP)
               .build();
         }
       }
