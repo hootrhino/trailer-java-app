@@ -18,7 +18,11 @@ service Trailer {
     // 服务调用
     rpc Service (ServiceRequest) returns (ServiceResponse) {}
     // 流数据
-    rpc OnStream (stream StreamRequest) returns (stream StreamResponse);
+    rpc OnStream (StreamRequest) returns (stream StreamResponse);
+    // 双向流数据
+    rpc BiStream (stream StreamRequest) returns (stream StreamResponse);
+    // 客户端流数据
+    rpc clientStreamMethod(stream StreamRequest) returns (StreamResponse);
     // 数据查询
     rpc Query (DataRowsRequest) returns (DataRowsResponse) {}
     // 数据模型

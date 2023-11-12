@@ -10068,19 +10068,23 @@ public final class RulexTrailer {
       "DataRowsRequest\022\r\n\005query\030\001 \001(\014\"1\n\020DataRo" +
       "wsResponse\022\035\n\003row\030\001 \003(\0132\020.trailer.DataRo" +
       "w*-\n\tValueType\022\n\n\006STRING\020\000\022\n\n\006NUMBER\020\001\022\010" +
-      "\n\004BOOL\020\0022\313\003\n\007Trailer\022,\n\004Init\022\017.trailer.C" +
+      "\n\004BOOL\020\0022\323\004\n\007Trailer\022,\n\004Init\022\017.trailer.C" +
       "onfig\032\021.trailer.Response\"\000\022.\n\005Start\022\020.tr" +
       "ailer.Request\032\021.trailer.Response\"\000\0225\n\006St" +
       "atus\022\020.trailer.Request\032\027.trailer.StatusR" +
       "esponse\"\000\022>\n\007Service\022\027.trailer.ServiceRe" +
-      "quest\032\030.trailer.ServiceResponse\"\000\022?\n\010OnS" +
+      "quest\032\030.trailer.ServiceResponse\"\000\022=\n\010OnS" +
       "tream\022\026.trailer.StreamRequest\032\027.trailer." +
-      "StreamResponse(\0010\001\022>\n\005Query\022\030.trailer.Da" +
-      "taRowsRequest\032\031.trailer.DataRowsResponse" +
-      "\"\000\022;\n\006Schema\022\026.trailer.SchemaRequest\032\027.t" +
-      "railer.SchemaResponse\"\000\022-\n\004Stop\022\020.traile" +
-      "r.Request\032\021.trailer.Response\"\000B%\n\007traile" +
-      "rB\014RulexTrailerP\000Z\n./;trailerb\006proto3"
+      "StreamResponse0\001\022?\n\010BiStream\022\026.trailer.S" +
+      "treamRequest\032\027.trailer.StreamResponse(\0010" +
+      "\001\022G\n\022clientStreamMethod\022\026.trailer.Stream" +
+      "Request\032\027.trailer.StreamResponse(\001\022>\n\005Qu" +
+      "ery\022\030.trailer.DataRowsRequest\032\031.trailer." +
+      "DataRowsResponse\"\000\022;\n\006Schema\022\026.trailer.S" +
+      "chemaRequest\032\027.trailer.SchemaResponse\"\000\022" +
+      "-\n\004Stop\022\020.trailer.Request\032\021.trailer.Resp" +
+      "onse\"\000B%\n\007trailerB\014RulexTrailerP\000Z\n./;tr" +
+      "ailerb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

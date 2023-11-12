@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -21,6 +22,12 @@ public class TrailerServer {
     private static final Logger log = Logger.getLogger(TrailerServer.class.getName());
 
     private Server server;
+
+    public static void main(String[] args) throws InterruptedException, IOException {
+        TrailerServer trailerServer = new TrailerServer();
+        trailerServer.start();
+        trailerServer.blockUntilShutdown();
+    }
 
     private void start() throws IOException {
         int port = 7701;
@@ -56,11 +63,6 @@ public class TrailerServer {
         }
     }
 
-    public static void main(String[] args) throws InterruptedException, IOException {
-        TrailerServer trailerServer = new TrailerServer();
-        trailerServer.start();
-        trailerServer.blockUntilShutdown();
-    }
 
     static class TrailerImpl extends TrailerGrpc.TrailerImplBase {
         @Override
@@ -81,11 +83,16 @@ public class TrailerServer {
 
         @Override
         public void status(RulexTrailer.Request request, StreamObserver<RulexTrailer.StatusResponse> responseObserver) {
-            log.info("来自协议包的日志 Status");
+//            log.info("来自协议包的日志 Status");
             RulexTrailer.StatusResponse.Builder builder = RulexTrailer.StatusResponse.newBuilder();
             builder.setStatus(RulexTrailer.StatusResponse.Status.RUNNING);
             builder.setMessage("Success");
             RulexTrailer.StatusResponse response = builder.build();
+            Random random = new Random(System.currentTimeMillis());
+            if (random.nextInt() % 2 == 0) {
+                return;
+//                throw new RuntimeException("???");
+            }
             responseObserver.onNext(response);
             responseObserver.onCompleted();
         }
@@ -128,28 +135,52 @@ public class TrailerServer {
         }
 
         @Override
-        public StreamObserver<RulexTrailer.StreamRequest> onStream(StreamObserver<RulexTrailer.StreamResponse> responseObserver) {
+        public StreamObserver<RulexTrailer.StreamRequest> biStream(StreamObserver<RulexTrailer.StreamResponse> responseObserver) {
             return new StreamObserver<RulexTrailer.StreamRequest>() {
                 @Override
-                public void onNext(RulexTrailer.StreamRequest streamRequest) {
-                    log.info("来自协议包的日志 onStream");
+                public void onNext(RulexTrailer.StreamRequest value) {
+                    while(true) {
+                        RulexTrailer.StreamResponse instance = RulexTrailer.StreamResponse.getDefaultInstance();
+                        responseObserver.onNext(instance);
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                            break;
+                        }
+                    }
                 }
 
                 @Override
-                public void onError(Throwable throwable) {
-                    log.log(Level.ALL, throwable.getMessage());
+                public void onError(Throwable t) {
                 }
 
                 @Override
                 public void onCompleted() {
-                    RulexTrailer.StreamResponse response = RulexTrailer.StreamResponse.newBuilder()
-                            .setCode(1)
-                            .setData(ByteString.copyFrom("OK", StandardCharsets.UTF_8))
-                            .build();
-                    responseObserver.onNext(response);
-                    responseObserver.onCompleted();
                 }
             };
+        }
+
+        @Override
+        public void onStream(RulexTrailer.StreamRequest streamRequest, StreamObserver<RulexTrailer.StreamResponse> responseObserver) {
+            log.info("receive onStream");
+            Random random = new Random(System.currentTimeMillis());
+            for(;;) {
+                RulexTrailer.StreamResponse response = RulexTrailer.StreamResponse.newBuilder().setCode(random.nextInt()).build();
+                try {
+                    responseObserver.onNext(response);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return;
+                }
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+            }
+            log.info("end");
         }
 
         @Override
